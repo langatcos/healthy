@@ -24,8 +24,8 @@ class SwaggerConfig {
     }
     private fun apiInfo(): ApiInfo {
         return ApiInfoBuilder()
-            .title("Actisure Additional APIS")
-            .description("Actisure Additional Apis")
+            .title("Well Health Microservices")
+            .description("WellHealth Microservices- Data required by WellHealth App")
             .version("1.0")
             .build()
     }
