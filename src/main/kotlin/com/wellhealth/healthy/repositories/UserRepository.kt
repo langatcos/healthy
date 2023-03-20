@@ -1,9 +1,10 @@
 package com.wellhealth.healthy.repositories
 
 import com.wellhealth.healthy.services.Users
-import org.springframework.data.jpa.repository.Query
+import org.springframework.data.jdbc.repository.query.Query
+import org.springframework.data.repository.CrudRepository
 
-interface UserRepository {
-    @Query("select * from public.users")
+interface UserRepository:CrudRepository<Users,String> {
+    @Query("select * from users")
     fun getAllUsers():List<Users>
 }

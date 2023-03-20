@@ -10,5 +10,5 @@ class Users (
     val firstname:String,
     val surname:String,
     val username:String,
-    val password:Password
+    val userpwd:String
 )
