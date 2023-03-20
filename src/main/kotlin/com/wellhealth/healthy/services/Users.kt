@@ -2,9 +2,8 @@ package com.wellhealth.healthy.services
 
 import org.springframework.data.relational.core.mapping.Table
 import org.springframework.data.annotation.Id
-import sun.security.util.Password
 
-@Table("Users")
+@Table("users")
 class Users (
     @Id val entityid:String,
     val firstname:String,

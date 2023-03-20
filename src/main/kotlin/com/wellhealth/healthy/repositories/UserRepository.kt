@@ -7,4 +7,5 @@ import org.springframework.data.repository.CrudRepository
 interface UserRepository:CrudRepository<Users,String> {
     @Query("select * from users")
     fun getAllUsers():List<Users>
+   fun findAllByusername (username: String):List<Users>
 }
