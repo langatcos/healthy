@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 @EnableJpaRepositories
 @EnableJdbcRepositories
 @SpringBootApplication
+
 class HealthyApplication
 
 fun main(args: Array<String>) {
