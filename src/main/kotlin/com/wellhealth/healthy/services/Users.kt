@@ -1,4 +1,4 @@
-package com.wellhealth.healthy.controllers
+package com.wellhealth.healthy.services
 
 import org.springframework.data.relational.core.mapping.Table
 import org.springframework.data.annotation.Id
