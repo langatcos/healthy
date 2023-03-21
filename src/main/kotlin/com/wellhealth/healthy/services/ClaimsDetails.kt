@@ -8,7 +8,8 @@ import java.util.*
 class ClaimsDetails(
     @Id val assessmentid:Int,
     val beneficiaryid:Int,
-    val policyid:Int, effectivedate:String,
+    val policyid:Int,
+    val effectivedate:String,
     val invoicetypedesc:String,
     val invoicereference:String,
     val treatmentdate:String,
