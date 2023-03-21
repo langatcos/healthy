@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository
 interface ClaimsDetailsRepository: CrudRepository<ClaimsDetails,kotlin.String>{
     @Query("SELECT assessmentid ,beneficiaryid,\n" +
             "       policyid,\n" +
-            "       effectivedate1 AS effectivedate,\n" +
+            "       effectivedate,\n" +
             "       invoicetypedesc,\n" +
             "       invoicereference,\n" +
             "       treatmentdate,\n" +
