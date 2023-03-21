@@ -2,8 +2,9 @@ package com.wellhealth.healthy.repositories
 
 import com.wellhealth.healthy.services.ClaimsDetails
 import org.springframework.data.jdbc.repository.query.Query
+import org.springframework.data.repository.CrudRepository
 
-interface ClaimsDetailsRepository {
+interface ClaimsDetailsRepository: CrudRepository<ClaimsDetails,kotlin.String>{
     @Query("SELECT assessmentid ,beneficiaryid,\n" +
             "       policyid,\n" +
             "       effectivedate1 AS effectivedate,\n" +
