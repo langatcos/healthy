@@ -5,7 +5,8 @@ import org.springframework.data.jdbc.repository.query.Query
 import org.springframework.data.repository.CrudRepository
 
 interface ClaimsDetailsRepository: CrudRepository<ClaimsDetails,kotlin.String>{
-    @Query("SELECT assessmentid ,beneficiaryid,\n" +
+    @Query("SELECT random() as id,\n" +
+            "assessmentid ,beneficiaryid,\n" +
             "       policyid,\n" +
             "       effectivedate,\n" +
             "       invoicetypedesc,\n" +

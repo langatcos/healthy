@@ -6,7 +6,8 @@ import java.util.*
 
 @Table("claimsdetails")
 class ClaimsDetails(
-    @Id val assessmentid:Int,
+    @Id val id:String,
+    val assessmentid:Int,
     val beneficiaryid:Int,
     val policyid:Int,
     val effectivedate:String,
