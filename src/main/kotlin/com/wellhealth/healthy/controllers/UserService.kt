@@ -18,7 +18,6 @@ internal class UserService (val user : UserRepository) {
     }
     @GetMapping("/getUser/{username}")
     @ApiOperation(value = "Get User by Username", notes = "Get the details about the user by supplying the Username")
-
     fun getUsers(@PathVariable username: String): ResponseEntity<List<Users>> {
         val userDetails = user.findAllByusername(username)
         return if (userDetails != null) {

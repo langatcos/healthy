@@ -17,7 +17,7 @@ class SwaggerConfig {
     fun api(): Docket {
         return Docket(DocumentationType.SWAGGER_2)
             .select()
-            .apis(RequestHandlerSelectors.basePackage("com.actisure.data"))
+            .apis(RequestHandlerSelectors.basePackage("com.wellhealth.healthy"))
             .paths(PathSelectors.any())
             .build()
             .apiInfo(apiInfo())
