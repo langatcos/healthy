@@ -4,6 +4,7 @@ import com.wellhealth.healthy.repositories.UserRepository
 import com.wellhealth.healthy.services.Users
 import io.swagger.annotations.ApiOperation
 import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RestController
@@ -18,6 +19,7 @@ internal class UserService (val user : UserRepository) {
     }
     @GetMapping("/getUser/{username}")
     @ApiOperation(value = "Get User by Username", notes = "Get the details about the user by supplying the Username")
+    @CrossOrigin(origins = ["http://localhost:3000"], allowCredentials = "true")
     fun getUsers(@PathVariable username: String): ResponseEntity<List<Users>> {
         val userDetails = user.findAllByusername(username)
         return if (userDetails != null) {
