@@ -28,6 +28,19 @@ internal class UserService (val user : UserRepository) {
             ResponseEntity.notFound().build()
         }
     }
+    @GetMapping("/checkEntityid/{entityid}")
+    @ApiOperation(value = "Check if user exist", notes = "Check if user Exist")
+    @CrossOrigin(origins = ["http://localhost:3000"], allowCredentials = "true")
+    fun checkExistingUser(@PathVariable entityid:Int): ResponseEntity<List<Users>>{
+        val existinguser=user.findAllByentityid(entityid)
+        return if (existinguser !=null){
+            ResponseEntity.ok(existinguser)
+        }else{
+            ResponseEntity.notFound().build()
+
+        }
+    }
+
     @PostMapping("/addusers")
     @CrossOrigin(origins = ["http://localhost:3000"], allowCredentials = "true")
     @ApiOperation(value = "Add New User into the db", notes = "Add user into the db")
