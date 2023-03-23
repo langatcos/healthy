@@ -34,7 +34,7 @@ internal class UserService (val user : UserRepository) {
     fun createUser(@RequestBody users: Users): ResponseEntity<Users> {
         // Hash the password before saving
         val hashedPassword = BCrypt.hashpw(users.userpwd, BCrypt.gensalt())
-        val newUser = Users(null,users.entityid, users.firstname, users.surname, users.username,users.gender,users.active,users.branch,hashedPassword)
+        val newUser = Users(null,users.entityid, users.firstname, users.surname, users.username,users.dob,users.gender,users.active,users.branch,hashedPassword)
         val savedUser = user.save(newUser)
         return ResponseEntity.ok(savedUser)
     }
