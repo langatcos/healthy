@@ -32,6 +32,8 @@ dependencies {
 	implementation("org.hibernate.validator:hibernate-validator:8.0.0.Final")
 	runtimeOnly("com.oracle.database.jdbc:ojdbc8")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation ("org.mindrot:jbcrypt:0.4")
+
 
 }
 

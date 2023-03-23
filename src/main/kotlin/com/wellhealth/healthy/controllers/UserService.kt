@@ -3,11 +3,11 @@ package com.wellhealth.healthy.controllers
 import com.wellhealth.healthy.repositories.UserRepository
 import com.wellhealth.healthy.services.Users
 import io.swagger.annotations.ApiOperation
+import org.mindrot.jbcrypt.BCrypt
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.CrossOrigin
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
 
 @RestController
 internal class UserService (val user : UserRepository) {
@@ -27,5 +27,14 @@ internal class UserService (val user : UserRepository) {
         } else {
             ResponseEntity.notFound().build()
         }
+    }
+    @PostMapping("/users")
+    @ApiOperation(value = "Add New User into the db", notes = "Add user into the db")
+    fun createUser(@RequestBody users: Users): ResponseEntity<Users> {
+        // Hash the password before saving
+        val hashedPassword = BCrypt.hashpw(users.userpwd, BCrypt.gensalt())
+        val newUser = Users(null,users.entityid, users.firstname, users.surname, users.username, hashedPassword)
+        val savedUser = user.save(newUser)
+        return ResponseEntity.ok(savedUser)
     }
 }

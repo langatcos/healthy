@@ -2,12 +2,18 @@ package com.wellhealth.healthy.services
 
 import org.springframework.data.relational.core.mapping.Table
 import org.springframework.data.annotation.Id
+import java.util.*
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
 
 @Table("users")
-class Users (
-    @Id val entityid:String,
+data class Users (
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    val userid:Int?,
+    val entityid:String,
     val firstname:String,
     val surname:String,
     val username:String,
-    val userpwd:String
+    val userpwd:String,
+
 )
