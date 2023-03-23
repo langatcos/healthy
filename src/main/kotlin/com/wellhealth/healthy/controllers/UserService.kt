@@ -12,8 +12,8 @@ import javax.persistence.GenerationType
 @RestController
 internal class UserService (val user : UserRepository) {
     @GetMapping("/getAllUsers")
-    @ApiOperation(value = "Get all the users", notes = "Get all The users from the db")
-
+    @ApiOperation(value = "Get all the users", notes = "Get all The users ")
+    @CrossOrigin(origins = ["http://localhost:3000"], allowCredentials = "true")
     fun index(): List<Users>{
         return user.getAllUsers()
     }
@@ -34,7 +34,7 @@ internal class UserService (val user : UserRepository) {
     fun createUser(@RequestBody users: Users): ResponseEntity<Users> {
         // Hash the password before saving
         val hashedPassword = BCrypt.hashpw(users.userpwd, BCrypt.gensalt())
-        val newUser = Users(null,users.entityid, users.firstname, users.surname, users.username,users.dob,users.gender,users.active,users.branch,hashedPassword)
+        val newUser = Users(null,users.entityid, users.firstname, users.surname, users.username,users.dob,users.gender,users.active,users.branch,null,hashedPassword)
         val savedUser = user.save(newUser)
         return ResponseEntity.ok(savedUser)
     }
