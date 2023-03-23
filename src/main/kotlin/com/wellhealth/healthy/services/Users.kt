@@ -17,9 +17,8 @@ data class Users (
     val username:String,
     val dob:String,
     val gender:String,
-    val active:String,
+    var active:String,
     val branch:String,
     val created_at:Instant?,
     val userpwd:String
-
 )

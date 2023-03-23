@@ -7,7 +7,7 @@ import org.mindrot.jbcrypt.BCrypt
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import java.time.Instant
-import javax.persistence.GeneratedValue
+import javax.persistence.EntityNotFoundException
 import javax.persistence.GenerationType
 
 @RestController
@@ -66,5 +66,24 @@ internal class UserService (val user : UserRepository) {
             ResponseEntity.notFound().build()
         }
 
+
     }
+    @PutMapping("/disableuser/{userid}")
+    @CrossOrigin(origins = ["http://localhost:3000"], allowCredentials = "true")
+    @ApiOperation(value = "Make user Inactive", notes = "Make User Inactive")
+    fun updateUser(@PathVariable userid:Int,@RequestBody users: Users): Users {
+
+        val existingUser=user.findUserByuserid(userid)
+        if(existingUser==null){
+            throw EntityNotFoundException("User with ID $userid not found")
+        }
+        existingUser.apply {
+            active = users.active
+
+            // Update other properties as needed
+        }
+        return user.save(existingUser)
+
+    }
+
 }

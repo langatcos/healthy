@@ -10,4 +10,7 @@ interface UserRepository:CrudRepository<Users,String> {
     fun findAllByusername (username: String):List<Users>
     fun findAllByentityid (entityid: Int):List<Users>
     fun findUserByuserid(userid: Int):Users?
+    fun getUserByuserid(userid: Int): List<Users>
+
+
 }
