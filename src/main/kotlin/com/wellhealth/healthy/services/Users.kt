@@ -10,7 +10,7 @@ import javax.persistence.GenerationType
 data class Users (
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     val userid:Int?,
-    val entityid:String,
+    val entityid:Int,
     val firstname:String,
     val surname:String,
     val username:String,

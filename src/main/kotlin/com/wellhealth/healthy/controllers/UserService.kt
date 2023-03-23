@@ -28,7 +28,8 @@ internal class UserService (val user : UserRepository) {
             ResponseEntity.notFound().build()
         }
     }
-    @PostMapping("/users")
+    @PostMapping("/addusers")
+    @CrossOrigin(origins = ["http://localhost:3000"], allowCredentials = "true")
     @ApiOperation(value = "Add New User into the db", notes = "Add user into the db")
     fun createUser(@RequestBody users: Users): ResponseEntity<Users> {
         // Hash the password before saving
