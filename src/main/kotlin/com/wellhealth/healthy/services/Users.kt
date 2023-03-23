@@ -2,6 +2,7 @@ package com.wellhealth.healthy.services
 
 import org.springframework.data.relational.core.mapping.Table
 import org.springframework.data.annotation.Id
+import java.time.Instant
 import java.util.*
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
@@ -18,7 +19,7 @@ data class Users (
     val gender:String,
     val active:String,
     val branch:String,
-    val created_at:Date?,
+    val created_at:Instant?,
     val userpwd:String
 
 )
