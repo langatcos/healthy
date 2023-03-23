@@ -51,4 +51,18 @@ internal class UserService (val user : UserRepository) {
         val savedUser = user.save(newUser)
         return ResponseEntity.ok(savedUser)
     }
+    @DeleteMapping("/deleteuser/{userid}")
+    @CrossOrigin(origins = ["http://localhost:3000"], allowCredentials = "true")
+    @ApiOperation(value = "Delete User", notes = "Delete User")
+    fun deleteuser(@PathVariable userid:Int) :ResponseEntity <Void> {
+        val userto_delete=user.findUserByuserid(userid)
+        return if (userto_delete !=null){
+            user.delete(userto_delete)
+            ResponseEntity.noContent().build()
+        }
+        else{
+            ResponseEntity.notFound().build()
+        }
+
+    }
 }
