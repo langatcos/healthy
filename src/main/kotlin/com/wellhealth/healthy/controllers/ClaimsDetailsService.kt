@@ -17,7 +17,7 @@ class ClaimsDetailsService (val claims:ClaimsDetailsRepository) {
     @ApiOperation(value = "Get Claims by Beneficiaryid", notes = "Query all claims by Beneficciaryid")
     @CrossOrigin(origins = ["http://localhost:3000"], allowCredentials = "true")
     fun getclaimsdetailsbyId(@PathVariable beneficiaryid: Int,  response :HttpServletResponse): ResponseEntity<List<ClaimsDetails>> {
-        val claimsdetails = claims.getAllclaimsdetailsbyId(beneficiaryid)
+        val claimsdetails = claims.getAllBybeneficiarid(beneficiaryid)
         response.setHeader("Access-Control-Allow-Credentials", "true") // Add the header to the response
 
         return if (claimsdetails != null) {

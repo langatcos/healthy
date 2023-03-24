@@ -12,6 +12,7 @@ data class Dependants (
     val Surname:String,
     val dob:Date,
     val policyid:Int,
+    val joindate: Date,
     val relationship:String,
     val effectivedate:String
 )
