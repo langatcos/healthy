@@ -7,5 +7,6 @@ import org.springframework.data.repository.CrudRepository
 @Table("policybeneficiary")
 interface DependantsRepository:CrudRepository<Dependants,String> {
     @Query ("select * from policybeneficiary")
-    fun getAllbenbyparentid(parentid:Int):List<Dependants>
+    fun getAllbenByparentid(parentid:Int):List<Dependants>
+    fun getAllbenBypolicyid(policyid:Int):List<Dependants>
 }
