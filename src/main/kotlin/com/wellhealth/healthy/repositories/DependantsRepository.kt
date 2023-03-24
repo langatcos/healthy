@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository
 interface DependantsRepository:CrudRepository<Dependants,String>  {
     @Query("select * from dependants")
     fun getAllDependants() : List<Dependants>
+    fun findAllpolicybeneficiaryBypolicyid(policyid:Int, effectivedate: String) : List<Dependants>
 
    fun findAllpolicybeneficiaryByparentid(parentid:Int) : List<Dependants>
+   fun getdependantsByEntityid(entityid :Int): List<Dependants>
 }

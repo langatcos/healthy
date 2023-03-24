@@ -10,6 +10,8 @@ data class Dependants (
     val parentid:Int,
     val firstname:String,
     val Surname:String,
-    val dob:String,
-    val relationship:String
+    val dob:Date,
+    val policyid:Int,
+    val relationship:String,
+    val effectivedate:String
 )
