@@ -22,11 +22,7 @@ internal class UserService (val user : UserRepository) {
     @CrossOrigin(origins = ["http://localhost:3000"], allowCredentials = "true")
     fun getUsers(@PathVariable username: String): ResponseEntity<List<Users>> {
         val userDetails = user.findAllByusername(username)
-        return if (userDetails != null) {
-            ResponseEntity.ok(userDetails)
-        } else {
-            ResponseEntity.notFound().build()
-        }
+        return ResponseEntity.ok(userDetails)
     }
     @GetMapping("/checkEntityid/{entityid}")
     @ApiOperation(value = "Check if user exist", notes = "Check if user Exist")

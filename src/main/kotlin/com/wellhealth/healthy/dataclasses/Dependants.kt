@@ -9,6 +9,5 @@ data class Dependants (
     val firstname:String,
     val Surname:String,
     val dob:String,
-    val joindate:Date,
     val relationship:String
 )
