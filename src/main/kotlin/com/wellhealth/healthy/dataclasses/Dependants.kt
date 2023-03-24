@@ -1,8 +1,10 @@
 package com.wellhealth.healthy.dataclasses
 
 import org.springframework.data.annotation.Id
+import org.springframework.data.relational.core.mapping.Table
 import java.util.*
 
+@Table("dependants")
 data class Dependants (
     @Id val entityid:Int,
     val parentid:Int,

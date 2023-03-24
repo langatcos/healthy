@@ -7,9 +7,7 @@ import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 
 @SpringBootApplication
-@EnableJdbcRepositories(basePackages = ["com.wellhealth.healthy.repositories"])
-@ComponentScan(basePackages = ["com.wellhealth.healthy"])
-
+@EnableJdbcRepositories
 class HealthyApplication
 
 fun main(args: Array<String>) {
