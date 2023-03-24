@@ -27,7 +27,7 @@ class DependantsService (val dependantsRepository: DependantsRepository) {
     @CrossOrigin(origins = ["http://localhost:3000"], allowCredentials = "true")
     fun getDependantsbyEntityid(@PathVariable entityid:Int):ResponseEntity<List<Dependants>> {
 
-        val depArray = dependantsRepository.getdependantsByEntityid(entityid)
+        val depArray = dependantsRepository.findAllByentityid(entityid)
 
         return if (depArray != null) {
             ResponseEntity.ok(depArray)
