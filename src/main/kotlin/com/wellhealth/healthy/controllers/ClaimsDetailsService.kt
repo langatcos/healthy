@@ -1,8 +1,7 @@
 package com.wellhealth.healthy.controllers
 
 import com.wellhealth.healthy.repositories.ClaimsDetailsRepository
-import com.wellhealth.healthy.services.ClaimsDetails
-import com.wellhealth.healthy.services.Users
+import com.wellhealth.healthy.dataclasses.ClaimsDetails
 import io.swagger.annotations.ApiOperation
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.CrossOrigin

@@ -1,8 +1,7 @@
-package com.wellhealth.healthy.services
+package com.wellhealth.healthy.dataclasses
 
 import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Table
-import java.util.*
 
 @Table("claimsdetails")
 class ClaimsDetails(

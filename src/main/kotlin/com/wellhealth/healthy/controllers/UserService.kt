@@ -1,14 +1,13 @@
 package com.wellhealth.healthy.controllers
 
 import com.wellhealth.healthy.repositories.UserRepository
-import com.wellhealth.healthy.services.Users
+import com.wellhealth.healthy.dataclasses.Users
 import io.swagger.annotations.ApiOperation
 import org.mindrot.jbcrypt.BCrypt
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import java.time.Instant
 import javax.persistence.EntityNotFoundException
-import javax.persistence.GenerationType
 
 @RestController
 internal class UserService (val user : UserRepository) {

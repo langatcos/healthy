@@ -1,9 +1,8 @@
-package com.wellhealth.healthy.services
+package com.wellhealth.healthy.dataclasses
 
 import org.springframework.data.relational.core.mapping.Table
 import org.springframework.data.annotation.Id
 import java.time.Instant
-import java.util.*
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 
