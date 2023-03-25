@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Table
 
 @Table("claimsdetails")
-class ClaimsDetails(
+data class ClaimsDetails(
     @Id val id:String,
     val assessmentid:Int,
     val beneficiaryid:Int,
