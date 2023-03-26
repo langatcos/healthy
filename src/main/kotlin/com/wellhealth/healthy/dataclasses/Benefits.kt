@@ -16,11 +16,12 @@ data class Benefits (
 data class BenefitCategory(
     val benefitid: Int,
     val benefitname: String,
-    val limit: Double,
-    val distribution: String
+    val distribution: String,
+    val limit: Double
 )
 data class  BenefitDetails(
     val policyid: Int,
     val effectivedate: Date,
     val benefitCategory: List<BenefitCategory>
 )
+
