@@ -22,10 +22,11 @@ class ClaimsCategoriesService (val category : ClaimsCategoriesRepository) {
                ResponseEntity.ok(groupBy { it.invoicebenefit }.map {
                    val (beneficiaryid,groupList)=it
                    InvoiceBenefits(
-                       groupList[0].invoicebenefit,
+
                        groupList[0].beneficiaryid,
                        groupList[0].policyid,
                        groupList[0].effectivedate,
+                       groupList[0].invoicebenefit,
                        groupList.map { Categories(it.invoicetype,it.settledamount) }
                    )
                })

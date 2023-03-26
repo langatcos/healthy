@@ -25,7 +25,7 @@ data class InvoiceBenefits(
     val policyid:Int,
     val effectivedate:Date,
     val invoicebenefit:String,
-    val invoicetye: List<Categories>
+    val invoicetype: List<Categories>
 
 
 
