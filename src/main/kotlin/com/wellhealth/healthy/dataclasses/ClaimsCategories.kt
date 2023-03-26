@@ -14,3 +14,19 @@ data class ClaimsCategories(
     val invoicebenefit:String,
     val settledamount:Double
 )
+data class Categories(
+    val invoicetype:String,
+    val settledamount:Double
+
+    )
+data class InvoiceBenefits(
+
+    val beneficiaryid:Int,
+    val policyid:Int,
+    val effectivedate:Date,
+    val invoicebenefit:String,
+    val invoicetye: List<Categories>
+
+
+
+    )
