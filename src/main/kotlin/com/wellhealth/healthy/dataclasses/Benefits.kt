@@ -7,7 +7,7 @@ import java.util.*
 data class Benefits (
     @Id val id:Int,
     val policyid:Int,
-    val effectivedate:Date,
+    val effectivedate:String,
     val benefitid:Int,
     val benefitname:String,
     val distribution:String,
@@ -21,7 +21,7 @@ data class BenefitCategory(
 )
 data class  BenefitDetails(
     val policyid: Int,
-    val effectivedate: Date,
+    val effectivedate: String,
     val benefitCategory: List<BenefitCategory>
 )
 
