@@ -1,9 +1,11 @@
 package com.wellhealth.healthy.dataclasses
 
 import org.springframework.data.annotation.Id
+import org.springframework.data.relational.core.mapping.Table
 import java.util.*
 
-data class claimsCategories(
+@Table("claimscategories")
+data class ClaimsCategories(
     @Id val id:Int,
     val beneficiaryid:Int,
     val policyid:Int,
