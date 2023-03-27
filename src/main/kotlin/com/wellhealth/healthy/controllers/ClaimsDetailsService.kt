@@ -16,7 +16,7 @@ class ClaimsDetailsService (val claims :ClaimsDetailsRepository) {
     @GetMapping("/getclaimsdetailsbyid/{beneficiaryid}")
     @ApiOperation(value = "Get Claims by Beneficiaryid", notes = "Query all claims by Beneficciaryid")
     @CrossOrigin(origins = ["http://localhost:3000"], allowCredentials = "true")
-    fun getclaimsdetailsbyId(@PathVariable beneficiaryid: Int): ResponseEntity<List<ClaimsDetails>> {
+    fun getClaimsByBeneficiaryid(@PathVariable beneficiaryid: Int): ResponseEntity<List<ClaimsDetails>> {
         val claimsdetails = claims.findClaimsByBeneficiaryid(beneficiaryid)
         //response.setHeader("Access-Control-Allow-Credentials", "true") // Add the header to the response
 
@@ -28,6 +28,7 @@ class ClaimsDetailsService (val claims :ClaimsDetailsRepository) {
     }
     @GetMapping("/getclaimsbybenefitid/{benefitid}/")
     @ApiOperation(value="Get Claims By benefitid", notes="Get Claims By benefitid")
+    @CrossOrigin(origins = ["http://localhost:3000"], allowCredentials = "true")
     fun getClaimsbyBenefitid (@PathVariable benefitid:Int):ResponseEntity<List<ClaimsDetails>>{
         val claimbybId=claims.findClaimsByBenefitid(benefitid)
         return if(claimbybId !=null){
