@@ -17,12 +17,22 @@ class ClaimsDetailsService (val claims :ClaimsDetailsRepository) {
     @ApiOperation(value = "Get Claims by Beneficiaryid", notes = "Query all claims by Beneficciaryid")
     @CrossOrigin(origins = ["http://localhost:3000"], allowCredentials = "true")
     fun getclaimsdetailsbyId(@PathVariable beneficiaryid: Int): ResponseEntity<List<ClaimsDetails>> {
-        val claimsdetails = claims.findClaimsbyID(beneficiaryid)
+        val claimsdetails = claims.findClaimsByBeneficiaryid(beneficiaryid)
         //response.setHeader("Access-Control-Allow-Credentials", "true") // Add the header to the response
 
         return if (claimsdetails != null) {
             ResponseEntity.ok(claimsdetails)
         } else {
+            ResponseEntity.notFound().build()
+        }
+    }
+    @GetMapping("/getclaimsbybenefitid/{benefitid}/")
+    @ApiOperation(value="Get Claims By benefitid", notes="Get Claims By benefitid")
+    fun getClaimsbyBenefitid (@PathVariable benefitid:Int):ResponseEntity<List<ClaimsDetails>>{
+        val claimbybId=claims.findClaimsByBenefitid(benefitid)
+        return if(claimbybId !=null){
+            ResponseEntity.ok(claimbybId)
+        }else{
             ResponseEntity.notFound().build()
         }
     }
