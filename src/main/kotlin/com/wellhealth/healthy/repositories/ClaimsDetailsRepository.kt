@@ -8,7 +8,8 @@ import org.springframework.data.repository.CrudRepository
 interface ClaimsDetailsRepository:CrudRepository<ClaimsDetails,String>{
 @Query("SELECT * FROM CLAIMSDETAILS")
 
-    fun findClaimsByBenefitid(benefitid : Int): List<ClaimsDetails>
+    fun findAllClaims():List<ClaimsDetails>
     fun findClaimsByBeneficiaryid(beneficiaryid : Int) : List<ClaimsDetails>
+    fun findClaimsByBenefitid(benefitid : Int): List<ClaimsDetails>
 
 }
