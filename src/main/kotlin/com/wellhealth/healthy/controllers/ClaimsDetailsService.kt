@@ -13,12 +13,11 @@ import javax.servlet.http.HttpServletResponse
 @RestController
 class ClaimsDetailsService (val claims :ClaimsDetailsRepository) {
 
-    @GetMapping("/getclaimsdetailsbyid/{beneficiaryid}")
+    @GetMapping("/getClaimsBybeneficiaryid/{beneficiaryid}")
     @ApiOperation(value = "Get Claims by Beneficiaryid", notes = "Query all claims by Beneficciaryid")
     @CrossOrigin(origins = ["http://localhost:3000"], allowCredentials = "true")
     fun getClaimsByBeneficiaryid(@PathVariable beneficiaryid: Int): ResponseEntity<List<ClaimsDetails>> {
         val claimsdetails = claims.findClaimsByBeneficiaryid(beneficiaryid)
-        //response.setHeader("Access-Control-Allow-Credentials", "true") // Add the header to the response
 
         return if (claimsdetails != null) {
             ResponseEntity.ok(claimsdetails)

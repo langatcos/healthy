@@ -6,8 +6,9 @@ import org.springframework.data.jdbc.repository.query.Query
 import org.springframework.data.repository.CrudRepository
 
 interface ClaimsDetailsRepository:CrudRepository<ClaimsDetails,String>{
-@Query("SELECT random() as id,* FROM CLAIMSDETAILS")
+@Query("SELECT * FROM CLAIMSDETAILS")
 
-    fun findClaimsByBeneficiaryid(beneficiaryid : Int) : List<ClaimsDetails>
     fun findClaimsByBenefitid(benefitid : Int): List<ClaimsDetails>
+    fun findClaimsByBeneficiaryid(beneficiaryid : Int) : List<ClaimsDetails>
+
 }
