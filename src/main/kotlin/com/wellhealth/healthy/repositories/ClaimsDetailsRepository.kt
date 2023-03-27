@@ -10,6 +10,6 @@ interface ClaimsDetailsRepository:CrudRepository<ClaimsDetails,String>{
 
     fun findAllClaims():List<ClaimsDetails>
     fun findClaimsByBeneficiaryid(beneficiaryid : Int) : List<ClaimsDetails>
-    fun findClaimsByBenefitid(benefitid : Int): List<ClaimsDetails>
+    fun findAllByBenefitidAndBeneficiaryidAndPolicyidAndEffectivedate (benefitid : Int,beneficiaryid:Int,policyid:Int,effectivedate:String): List<ClaimsDetails>
 
 }

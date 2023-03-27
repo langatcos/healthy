@@ -25,11 +25,11 @@ class ClaimsDetailsService (val claims :ClaimsDetailsRepository) {
             ResponseEntity.notFound().build()
         }
     }
-    @GetMapping("/getclaimsbybenefitid/{benefitid}/")
+    @GetMapping("/getclaimsbybenefitid/{benefitid}/{beneficiaryid}/{policyid}/{effectivedate}")
     @ApiOperation(value="Get Claims By benefitid", notes="Get Claims By benefitid")
     @CrossOrigin(origins = ["http://localhost:3000"], allowCredentials = "true")
-    fun getClaimsbyBenefitid (@PathVariable benefitid:Int):ResponseEntity<List<ClaimsDetails>>{
-        val claimbybId=claims.findClaimsByBenefitid(benefitid)
+    fun getClaimsbyBenefitid (@PathVariable benefitid:Int, @PathVariable beneficiaryid:Int,@PathVariable policyid:Int, @PathVariable effectivedate:String):ResponseEntity<List<ClaimsDetails>>{
+        val claimbybId=claims.findAllByBenefitidAndBeneficiaryidAndPolicyidAndEffectivedate (benefitid,beneficiaryid,policyid,effectivedate)
         return if(claimbybId !=null){
             ResponseEntity.ok(claimbybId)
         }else{
