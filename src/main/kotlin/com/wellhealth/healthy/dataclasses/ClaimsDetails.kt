@@ -20,5 +20,6 @@ data class ClaimsDetails(
     val  invoicelinedetails:String,
     val provider:String,
     val invoicestatus:String,
-    val settledamount:Double
+    val settledamount:Double,
+    val benefitid:Int
 )
